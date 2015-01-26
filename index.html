@@ -24,36 +24,36 @@
   <!-- as long as this notice is retained.                                   -->
 
   <form name="everything">  <!-- A one-of-everything HTML form... -->
-   <table border cellpadding=5>   <!-- ...in a big HTML table. -->
+   <table>   <!-- ...in a big HTML table. -->
      <tr>
-       <td>Username:<br />[1]<input type=text name="username" size=15></td>
-       <td>Password:<br />[2]<input type=password name="password" size=15></td>
-       <td rowspan=4>Input Events[3]<br />
-         <textarea name="textarea" rows=20 cols=28></textarea></td>
-       <td rowspan=4 align=center Valign=center>
-         [9]<input type=button value="Clear" name="clearbutton"><br />
-         [10]<input type=submit name="submitbutton" value="Submit"><br />
-         [11]<input type=reset name="resetbutton" value="Reset"></td></tr>
+       <td>Username:<br/>[1]<input type="text" name="username" size="15"></td>
+       <td>Password:<br>[2]<input type="password" name="password" size="15"></td>
+       <td rowspan="4">Input Events[3]<br>
+         <textarea name="textarea" rows="20" cols="28"></textarea></td>
+       <td rowspan="4" >
+         [9]<input type="button" value="Clear" name="clearbutton"><br>
+         [10]<input type="submit" name="submitbutton" value="Submit"><br>
+         [11]<input type="reset" name="resetbutton" value="Reset"></td></tr>
      <tr>
-       <td colspan=2>Filename: [4]<input type=file name="file" size=15></td></tr>
+       <td colspan="2">Filename: [4]<input type="file" name="file" ></td></tr>
      <tr>
-       <td>My Computer Peripherals:<br />
-         [5]<input type=checkbox name="peripherals" value="modem">28.8K Modem<br />
-         [5]<input type=checkbox name="peripherals" value="printer">Printer<br />
-         [5]<input type=checkbox name="peripherals" value="tape">Tape backup</td>
-       <td>My Web browser:<br />
-         [6]<input type=radio name="browser" value="nn">Netscape Navigator<br />
-         [6]<input type=radio name="browser" value="ie">Internet Explorer<br />
-         [6]<input type=radio name="browser" value="other">Other</td></tr>
+       <td>My Computer Peripherals:<br>
+         [5]<input type="checkbox" name="peripherals" value="modem">28.8K Modem<br>
+         [5]<input type="checkbox" name="peripherals" value="printer">Printer<br>
+         [5]<input type="checkbox" name="peripherals" value="tape">Tape backup</td>
+       <td>My Web browser:<br>
+         [6]<input type="radio" name="browser" value="nn">Netscape Navigator<br>
+         [6]<input type="radio" name="browser" value="ie">Internet Explorer<br>
+         [6]<input type="radio" name="browser" value="other">Other</td></tr>
      <tr>
-       <td>My Hobbies:[7]<br />
-         <select multiple name="hobbies" size=4>
+       <td>My Hobbies:[7]<br/>
+         <select multiple name="hobbies" size="4">
            <option value="programming">Hacking JavaScript
            <option value="surfing">Surfing the Web
            <option value="caffeine">Drinking Coffee
            <option value="annoying">Annoying my Friends
          </select></td>
-       <td align=center valign=center>My Favorite Color:<br />[8]
+       <td >My Favorite Color:<br>[8]
          <select name="color">
            <option value="red">Red        <option value="green">Green
            <option value="blue">blue      <option value="white">White
@@ -61,10 +61,10 @@
          </select></td></tr>
    </table>
   </form>
-  <div align=center>
-    <table border=4 bgcolor=pink cellspacing=1 cellpadding=4>
+  <div >
+    <table>
       <tr>
-        <td align=center><b>Form Elements</b></td>
+        <td ><b>Form Elements</b></td>
         <td>[1] Text</td>  <td>[2] Password</td>  <td>[3] Textarea</td>
         <td>[4] FileUpload</td> <td>[5] Checkbox</td></tr>
       <tr>
@@ -73,7 +73,7 @@
         <td>[10] Submit</td>  <td>[11] Reset</td></tr>
     </table>
   </div>
-  
+
   <!--includes javascript at the bottom so the page loads faster-->
   <script type="text/javascript">
   // This generic function appends details of an event to the big Textarea
@@ -85,7 +85,7 @@
       if ((element.type == "select-one") || (element.type == "select-multiple")){
           value = " ";
           for(var i = 0; i < element.options.length; i++)
-              if (element.options[i].selected) 
+              if (element.options[i].selected)
                   value += element.options[i].value + " ";
       }
       else if (element.type == "textarea") value = "...";
@@ -104,7 +104,7 @@
       var focus_handler = new Function("report(this, 'Focus')");
       var blur_handler = new Function("report(this, 'blur')");
       var select_handler = new Function("report(this, 'Select')");
- 
+
       for(var i = 0; i < f.elements.length; i++) {
           var e = f.elements[i];
           e.onclick = click_handler;
@@ -115,11 +115,11 @@
       }
 
       // Special case handlers for the buttons:
-      f.clearbutton.onclick = 
+      f.clearbutton.onclick =
           new Function("this.form.textarea.value=''; report(this, 'Click');");
-      f.submitbutton.onclick = 
+      f.submitbutton.onclick =
           new Function("report(this, 'Click'); return false");
-      f.resetbutton.onclick = 
+      f.resetbutton.onclick =
           new Function("this.form.reset(); report(this, 'Click'); return false");
   }
   // Activate our form by adding all possible event handlers!
