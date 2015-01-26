@@ -1,0 +1,36 @@
+#table-1 {
+	border: 1px solid black;
+}
+
+#table-1 td {
+	padding: 5px;
+	border: 1px solid black;
+}
+
+#table-2 {
+	border: 4px solid black;
+	background-color: pink;
+}
+
+#table-2 td  {
+	margin: 1px;
+	padding: 4px;
+	border: 1px solid black;
+}
+
+.center-h {
+	text-align:center;
+}
+
+.center-v {
+	vertical-align: center;
+}
+
+.center-div {
+	margin: auto;
+}
+
+#div-table-2 {
+	width: 50%;
+	margin-top: 10px;
+}
