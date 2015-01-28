@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <title>CodeBot</title>
-
+    <link rel="stylesheet" href="app.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,13 +24,13 @@
   <!-- as long as this notice is retained.                                   -->
 
   <form name="everything">  <!-- A one-of-everything HTML form... -->
-   <table>   <!-- ...in a big HTML table. -->
+   <table id="table-1">   <!-- ...in a big HTML table. -->
      <tr>
        <td>Username:<br/>[1]<input type="text" name="username" size="15"></td>
        <td>Password:<br>[2]<input type="password" name="password" size="15"></td>
        <td rowspan="4">Input Events[3]<br>
          <textarea name="textarea" rows="20" cols="28"></textarea></td>
-       <td rowspan="4" >
+       <td rowspan="4" class="center-v center-h">
          [9]<input type="button" value="Clear" name="clearbutton"><br>
          [10]<input type="submit" name="submitbutton" value="Submit"><br>
          [11]<input type="reset" name="resetbutton" value="Reset"></td></tr>
@@ -61,10 +61,10 @@
          </select></td></tr>
    </table>
   </form>
-  <div >
-    <table>
+  <div id="div-table-2">
+    <table id="table-2">
       <tr>
-        <td ><b>Form Elements</b></td>
+        <td class="center-h"><b>Form Elements</b></td>
         <td>[1] Text</td>  <td>[2] Password</td>  <td>[3] Textarea</td>
         <td>[4] FileUpload</td> <td>[5] Checkbox</td></tr>
       <tr>

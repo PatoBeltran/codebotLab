@@ -18,19 +18,16 @@
 	border: 1px solid black;
 }
 
+#div-table-2 {
+	width: 50%;
+	margin: auto;
+	margin-top: 15px;
+}
+
 .center-h {
 	text-align:center;
 }
 
 .center-v {
 	vertical-align: center;
-}
-
-.center-div {
-	margin: auto;
-}
-
-#div-table-2 {
-	width: 50%;
-	margin-top: 10px;
 }
