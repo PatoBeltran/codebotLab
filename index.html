@@ -73,57 +73,8 @@
         <td>[10] Submit</td>  <td>[11] Reset</td></tr>
     </table>
   </div>
-  
+
   <!--includes javascript at the bottom so the page loads faster-->
-  <script type="text/javascript">
-  // This generic function appends details of an event to the big Textarea
-  // element in the form above. It will be called from various event handlers.
-  function report(element, event)
-  {
-      var t = element.form.textarea;
-      var elmtname = element.name;
-      if ((element.type == "select-one") || (element.type == "select-multiple")){
-          value = " ";
-          for(var i = 0; i < element.options.length; i++)
-              if (element.options[i].selected) 
-                  value += element.options[i].value + " ";
-      }
-      else if (element.type == "textarea") value = "...";
-      else value = element.value;
-      var msg = event + ": " + elmtname + ' (' + value + ')\n';
-      t.value = t.value + msg;
-  }
-
-  // This function adds a bunch of event handlers to every element in a form.
-  // It doesn't bother checking to see if the element supports the event handler,
-  // it just adds them all. Note that the event handlers call report() above.
-  function addhandlers(f)
-  {
-      var click_handler = new Function("report(this, 'Click')");
-      var change_handler = new Function("report(this, 'Change')");
-      var focus_handler = new Function("report(this, 'Focus')");
-      var blur_handler = new Function("report(this, 'blur')");
-      var select_handler = new Function("report(this, 'Select')");
- 
-      for(var i = 0; i < f.elements.length; i++) {
-          var e = f.elements[i];
-          e.onclick = click_handler;
-          e.onchange = change_handler;
-          e.onfocus = focus_handler;
-          e.onblur = blur_handler;
-          e.onselect = select_handler;
-      }
-
-      // Special case handlers for the buttons:
-      f.clearbutton.onclick = 
-          new Function("this.form.textarea.value=''; report(this, 'Click');");
-      f.submitbutton.onclick = 
-          new Function("report(this, 'Click'); return false");
-      f.resetbutton.onclick = 
-          new Function("this.form.reset(); report(this, 'Click'); return false");
-  }
-  // Activate our form by adding all possible event handlers!
-  addhandlers(document.everything);
-  </script>
+  <script type="text/javascript" charset="utf-8" src="application.js"></script>
 </body>
 </html>
